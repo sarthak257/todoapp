@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background:grey;
+
+}
+
+
+.wrapper
+{
+    margin:120px auto;
+max-width: 400px;
+width: 100%;
+background: white;
+padding: 25px;
+border-radius: 10px;
+
+}
+
+
+
+.wrapper header
+{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+.wrapper .inputfield
+{
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+
+.inputfield input{
+    width: 85%;
+    height: 100%;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.inputfield button{
+    width: 50px;
+    height: 100%;
+    border:none;
+    border-radius: 10%;
+    margin-left: 10px;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.inputfield button.active{
+opacity: 1;
+pointer-events: auto;
+}
+
+
+
+
+.todolist li{
+    list-style: none;
+
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    background: lightblue;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.todolist li span
+{
+
+    position: absolute;
+    right: -45px;
+    color: white;
+    background: green;
+    width: 45px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+transition: all 0.3s ease;
+
+}
+
+.todolist li:hover span{
+    right:0px
+}
+
+.wrapper .footer
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+
+
+
+.footer button
+{
+    border:none;
+    border-radius: 10%;
+    /* margin-left: 10px; */
+    cursor: pointer;
+    outline: none;
+font-size: 20px;
+opacity: 0.6;
+pointer-events: none;
+}
+
+.footer button.active
+{
+    opacity: 1;
+    pointer-events: auto;
+}
