@@ -4,7 +4,6 @@ const todoList=document.querySelector(".todolist");
 const deleteAll=document.querySelector(".footer button");
 
 
-
  inputBox.onkeyup=()=>{
 
      let userdata=inputBox.value;
@@ -71,7 +70,7 @@ deleteAll.classList.add("active")
 
 let newlitag='';
     listArr.forEach((element,index)=>{
-        newlitag=newlitag+`<li> ${element}<span> <i onclick ="deletetask(${index})"class="fas fa-trash "></i></span></li>`;
+        newlitag= newlitag+`<li>  <i onclick="checkboxa(${index})" class="fas fa-check-square"></i>   ${element}<span> <i onclick ="deletetask(${index})"class="fas fa-trash "></i></span></li>`;
     
     });
     todoList.innerHTML=newlitag;// adding new li tag inside todo list class
@@ -100,3 +99,33 @@ deleteAll.onclick=()=>{
  
     showTask(); // calling the function so to show results
 }
+
+
+function indextovalue(index){
+
+let getLocalStorage= localStorage.getItem("new todo");
+listArr=JSON.parse(getLocalStorage);
+
+      return listArr[index];
+
+}
+
+function checkboxa(index)
+{
+   
+    let getLocalStorage=localStorage.getItem("new todo");  // ??
+    listArr=JSON.parse(getLocalStorage);
+    const strike=strikeThrough(listArr[index]);
+    listArr.splice(index,1,strike); // delete
+    localStorage.setItem("new todo",JSON.stringify(listArr)); // transforming js object into json string
+ 
+   showTask(); 
+}
+
+
+function strikeThrough(text) {
+    return text
+      .split('')
+      .map(char => char + '\u0336')
+      .join('')
+  }
